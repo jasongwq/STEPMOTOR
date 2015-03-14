@@ -90,18 +90,18 @@ float *pit_just  = &PID_PID_12.D;
 #define PID_PID_12_D_MULTIPLYING (100)
 
 //float *ex_on_off = &PID_PID_2.P;
-float *fRate1 = &PID_PID_4.P;
-float *fangle1 = &PID_PID_4.I;
-float *fdir1 = &PID_PID_4.D;
-float *fRate2 = &PID_PID_5.P;
-float *fangle2 = &PID_PID_5.I;
-float *fdir2 = &PID_PID_5.D;
-float *fRate3 = &PID_PID_6.P;
-float *fangle3 = &PID_PID_6.I;
-float *fdir3 = &PID_PID_6.D;
-float *fRate4 = &PID_PID_3.P;
-float *fangle4 = &PID_PID_3.I;
-float *fdir4 = &PID_PID_3.D;
+float *fangle1 = &PID_PID_4.P;
+float *fangle2 = &PID_PID_4.I;
+float *fangle3 = &PID_PID_4.D;
+float *fangle4 = &PID_PID_5.P;
+float *fangle5 = &PID_PID_5.I;
+float *fangle6 = &PID_PID_5.D;
+float *fangle7 = &PID_PID_6.P;
+float *fangle8 = &PID_PID_6.I;
+float *fangle9 = &PID_PID_6.D;
+float *fRate1 = &PID_PID_7.P;
+float *fRate2 = &PID_PID_7.I;
+float *fRate3 = &PID_PID_7.D;
 
 void Ex_Init(void)
 {
