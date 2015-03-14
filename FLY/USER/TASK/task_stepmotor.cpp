@@ -103,7 +103,6 @@ int task_stepmotor(void)
     PA2_OUT;
     //motorC
     *fangle1 = 10000;
-
     *fangle2 = 18500;
     *fangle3 = 5000;
     *fangle4 = 6000;
@@ -153,7 +152,7 @@ int task_stepmotor(void)
         PAout(7) = 1;
         //ÇÐ¶Ï
 
-        motorC.SetStep((s32)(fangle4));
+        motorC.SetStep((s32)(*fangle4));
         motorC.SetRate((u16)(*fRate3));
         //°ü½ô
         while (motorC.GetState() == 1)
@@ -162,7 +161,7 @@ int task_stepmotor(void)
         };
 
         motorA.SetDir(1);
-        motorA.SetStep((s32)(fangle5));
+        motorA.SetStep((s32)(*fangle5));
         while (motorA.GetState() == 1)
         {
             WaitX(1);
