@@ -5,6 +5,8 @@
 extern int task_bmp085(void);
 extern int task_ultrasonic(void);
 extern int task_pwm_ex(void);
+extern int task_pwm_ex1(void);
+
 extern int task_led(void);
 extern int task_hmc5883l(void);
 extern int task_cap_rc(void);
@@ -19,3 +21,5 @@ extern int task_gsm(void);
         }
 #endif
 extern int task_display(void);
+extern int task_stepmotor(void);
+

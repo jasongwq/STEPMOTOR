@@ -549,11 +549,6 @@
           <GroupName>USER</GroupName>
           <Files>
             <File>
-              <FileName>stm32f10x_it.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\USER\stm32f10x_it.c</FilePath>
-            </File>
-            <File>
               <FileName>system_stm32f10x.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\USER\system_stm32f10x.c</FilePath>
@@ -567,6 +562,11 @@
               <FileName>main.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>.\USER\main.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f10x_it.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\USER\stm32f10x_it.cpp</FilePath>
             </File>
           </Files>
         </Group>
@@ -632,6 +632,11 @@
               <FileName>UI_User.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>.\USER\TASK\UI_User.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>task_stepmotor.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\USER\TASK\task_stepmotor.cpp</FilePath>
             </File>
           </Files>
         </Group>

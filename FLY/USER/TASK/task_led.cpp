@@ -32,8 +32,6 @@ int task_led(void)
             WaitX(200);
             LED1_Toggle;
         }
-				        
-
     }
     _EE
 }

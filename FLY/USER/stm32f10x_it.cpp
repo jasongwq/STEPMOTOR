@@ -1,17 +1,22 @@
 /* Includes ------------------------------------------------------------------*/
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include "stm32f10x_it.h"
 #include "G32_timer_cap.h"
-void (*TIM1_IRQ)(void);
-void (*TIM2_IRQ)(void);
-void (*TIM3_IRQ)(void);
-void (*TIM4_IRQ)(void);
-void (*TIM5_IRQ)(void);
-void (*TIM6_IRQ)(void);
-void (*TIM7_IRQ)(void);
-void (*TIM1_BRK_IRQ)(void);
-void (*TIM1_UP_IRQ)(void);
-void (*TIM1_TRG_COM_IRQ)(void);
-void (*TIM1_CC_IRQ)(void);
+	#include "usr_usart.h"
+//void (*TIM1_IRQ)(void);
+//void (*TIM2_IRQ)(void);
+//void (*TIM3_IRQ)(void);
+//void (*TIM4_IRQ)(void);
+//void (*TIM5_IRQ)(void);
+//void (*TIM6_IRQ)(void);
+//void (*TIM7_IRQ)(void);
+//void (*TIM1_BRK_IRQ)(void);
+//void (*TIM1_UP_IRQ)(void);
+//void (*TIM1_TRG_COM_IRQ)(void);
+//void (*TIM1_CC_IRQ)(void);
 extern void SYS_UART_IQR(USART_TypeDef *USARTx);
 void USART1_IRQHandler(void)  //串口中断函数
 {
@@ -21,7 +26,7 @@ void USART1_IRQHandler(void)  //串口中断函数
 }
 void USART2_IRQHandler(void)  //串口中断函数
 {
-    ATK_Usart2_IQR();
+//    ATK_Usart2_IQR();
     //SYS_UART_IQR(USART2);
 }
 void USART3_IRQHandler(void)  //串口中断函数
@@ -38,12 +43,12 @@ void DMA1_Channel1_IRQHandler(void)
 }
 void TIM1_BRK_IRQHandler(void)
 {
-    TIM1_BRK_IRQ();
+//    TIM1_BRK_IRQ();
 }
 
 void TIM1_TRG_COM_IRQHandler(void)
 {
-    TIM1_TRG_COM_IRQ();
+//    TIM1_TRG_COM_IRQ();
 }
 extern void TIM1_Cap_IRQ(void);
 
@@ -118,17 +123,78 @@ void TIM6_IRQHandler(void)
 {
     if (TIM6->SR & TIM_IT_Update)
     {
-        TIM6_IRQ();
+//        TIM6_IRQ();
         TIM6->SR = ~TIM_FLAG_Update;
     }
 }
+extern u8 iqr1;
+void EXTI0_IRQHandler(void)
+{
+    if(EXTI_GetITStatus(EXTI_Line0) != RESET)
+    {
+			  iqr1=1;
+        Sys_Printf(USART1, (char *)"iqr1");
+        // Clear the EXTI Line 0
+		}
+		EXTI_ClearITPendingBit(EXTI_Line0);
+}
+void EXTI3_IRQHandler(void)
+{
+    if(EXTI_GetITStatus(EXTI_Line3) != RESET)
+    {iqr1=1;
+Sys_Printf(USART1, (char *)"iqr3");
+        // Clear the EXTI Line 3
+        EXTI_ClearITPendingBit(EXTI_Line3);
+    }
+}
+void EXTI9_5_IRQChannel(void)
+{
+    if(EXTI_GetITStatus(EXTI_Line5) != RESET)
+    {
+			
+			
+        // Clear the EXTI Line 5
+        EXTI_ClearITPendingBit(EXTI_Line5);
+    }
+    else if(EXTI_GetITStatus(EXTI_Line6) != RESET)
+    {
+
+        // Clear the EXTI Line 6
+        EXTI_ClearITPendingBit(EXTI_Line6);
+    }
+    else if(EXTI_GetITStatus(EXTI_Line7) != RESET)
+    {
+
+        // Clear the EXTI Line 7
+        EXTI_ClearITPendingBit(EXTI_Line7);
+    }
+    else if(EXTI_GetITStatus(EXTI_Line8) != RESET)
+    {
+
+        // Clear the EXTI Line 8
+        EXTI_ClearITPendingBit(EXTI_Line8);
+    }
+    else if(EXTI_GetITStatus(EXTI_Line9) != RESET)
+    {
+
+        // Clear the EXTI Line 9
+        EXTI_ClearITPendingBit(EXTI_Line9);
+    }
+}
+#ifdef __cplusplus
+}
+#endif
+extern void MotorIQR(void);
+extern "C" {
 void TIM7_IRQHandler(void)
 {
     if (TIM7->SR & TIM_IT_Update)
     {
-        TIM7_IRQ();
+      //  TIM7_IRQ();
+			  MotorIQR();
         TIM7->SR = ~TIM_FLAG_Update;
     }
+}
 }
 /*******************************************************************************
 * Function Name  : USB_HP_CAN_TX_IRQHandler

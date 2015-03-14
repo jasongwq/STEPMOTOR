@@ -50,14 +50,14 @@ TIM1_CH3N    |PB15(!36)|   PB1   |   PE12(100 144)   |
  * (1)∆Ù”√ (0)≤ª∆Ù”√
  * AFIO 0-3
  */
-#define PWM_TIM2_CH1  1
+#define PWM_TIM2_CH1  0
 #define PWM_TIM2_CH2  1
 #define PWM_TIM2_CH3  0
 #define PWM_TIM2_CH4  0
 #define PWM_TIM2_AFIO 0
 
-#define PWM_TIM3_CH1  1
-#define PWM_TIM3_CH2  1
+#define PWM_TIM3_CH1  0
+#define PWM_TIM3_CH2  0
 #define PWM_TIM3_CH3  0
 #define PWM_TIM3_CH4  0
 #define PWM_TIM3_AFIO 0
