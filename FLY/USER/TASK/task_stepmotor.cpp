@@ -102,11 +102,11 @@ int task_stepmotor(void)
     PC2_OUT;
     PA2_OUT;
     //motorC
-    *fangle1 = 10000;
+    *fangle1 = 7000;
     *fangle2 = 18500;
     *fangle3 = 5000;
     *fangle4 = 6000;
-    *fangle5 = 20000;
+    *fangle5 = 10000;
     *fRate1 = 1100;
     *fRate2 = 1100;
     *fRate3 = 300;
@@ -143,12 +143,12 @@ int task_stepmotor(void)
             WaitX(1);
         };
 
-        PAout(5) = 0;
         PAout(7) = 0;
+				WaitX(5);
         PAout(5) = 1;
-        WaitX(1000);
+        WaitX(2000);
         PAout(5) = 0;
-        WaitX(500);
+        WaitX(5);
         PAout(7) = 1;
         //ÇÐ¶Ï
 
@@ -175,14 +175,15 @@ int task_stepmotor_test3(void)
     WaitX(20);
     PA5_OUT;
     PA7_OUT;
-
+//PAout(7) = 1;
+//	PAout(5) = 1;
     while (1)
     {
-        WaitX(500);
+        WaitX(2000);
         PAout(7) = 0;
         WaitX(5);
         PAout(5) = 1;
-        WaitX(1000);
+        WaitX(2000);
         PAout(5) = 0;
         WaitX(5);
         PAout(7) = 1;

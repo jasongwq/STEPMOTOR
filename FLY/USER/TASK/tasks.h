@@ -22,4 +22,6 @@ extern int task_gsm(void);
 #endif
 extern int task_display(void);
 extern int task_stepmotor(void);
+extern int task_stepmotor_test3(void);
+
 
