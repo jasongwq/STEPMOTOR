@@ -44,7 +44,7 @@ int main(void)
       RunTaskA(task_stepmotor,0);
 			RunTaskA(task_pwm_ex1,1);
 			
-        RunTaskA(task_display,2);
+      RunTaskA(task_display,2);
       RunTaskA(task_led,3);
     }
 }
